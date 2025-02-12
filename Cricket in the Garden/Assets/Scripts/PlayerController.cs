@@ -5,17 +5,20 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player stuff")]
-    public Rigidbody2D rb;
+        public Rigidbody2D rb;
 
     [Header("Movement Variables")]
-    private bool facingRight;
-    private bool callJump;
-    private float xMovement;
-    public float jumpForce;
-    public float speed;
+        private bool facingRight;
+        private bool callJump;
+        private float xMovement;
+        public float jumpForce;
+        public float speed;
     
     [Header("Rand vars")]
-    public LayerMask surface;
+        public LayerMask surface;
+
+    [Header("Sneak vars")] 
+        public GameObject sneakScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,5 +58,14 @@ public class PlayerController : MonoBehaviour
         float distance = 0.2f;
         // adds a circle at the feet of the player that is used to check if the player is touching the ground or not
         return Physics2D.OverlapCircle(position, distance, surface);
+    }
+    public void sneakToggle(bool toggle) {
+        sneakScreen.SetActive(toggle);
+    }
+    void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.CompareTag("bush")) {
+            Debug.Log("bush collision");
+            sneakToggle(true);
+        }
     }
 }
