@@ -19,18 +19,23 @@ public class PlayerController : MonoBehaviour
 
     [Header("Sneak vars")] 
         public GameObject sneakScreen;
+        public bool isSneaking;
+    
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        isSneaking = false;
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        Debug.Log(isOnSurface());
         xMovement = Input.GetAxis("Horizontal")*speed;
         if (isOnSurface() && Input.GetButtonDown("Jump")) {
             callJump = true;
+            Debug.Log("calljump");
         }
     }
     void FixedUpdate() {
@@ -54,18 +59,25 @@ public class PlayerController : MonoBehaviour
     }
     // method taken from my semester 1 project cuz its complicated and i dont fully understand it
     private bool isOnSurface() {
-        Vector2 position = new(transform.position.x, transform.position.y-(transform.localScale.y));
-        float distance = 0.2f;
+        Vector2 position = new(transform.position.x, transform.position.y-(transform.localScale.y) + 2.0f);
+        float distance = 0.5f;
         // adds a circle at the feet of the player that is used to check if the player is touching the ground or not
         return Physics2D.OverlapCircle(position, distance, surface);
     }
     public void sneakToggle(bool toggle) {
         sneakScreen.SetActive(toggle);
+        if (toggle) {
+            isSneaking = true;
+        } else {
+            isSneaking = false;
+        }
     }
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("bush")) {
-            Debug.Log("bush collision");
             sneakToggle(true);
+        }
+        if (collision.CompareTag("bushOut") && isSneaking) {
+            sneakToggle(false);
         }
     }
 }
