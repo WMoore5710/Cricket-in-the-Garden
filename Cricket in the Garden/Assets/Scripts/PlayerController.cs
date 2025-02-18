@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Player stuff")]
         public Rigidbody2D rb;
+        public int health;
 
     [Header("Movement Variables")]
         private bool facingRight;
