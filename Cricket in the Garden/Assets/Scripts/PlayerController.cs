@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+Player Controller script. Contains most player functions.
+Weapon Controller Handles the players gun functions. That script is put on the rotation point that is a child of this player object. 
+*/
 public class PlayerController : MonoBehaviour
 {
     [Header("Player stuff")]
@@ -32,11 +35,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        Debug.Log(isOnSurface());
         xMovement = Input.GetAxis("Horizontal")*speed;
         if (isOnSurface() && Input.GetButtonDown("Jump")) {
-            callJump = true;
-            Debug.Log("calljump");
+            callJump = true; 
         }
     }
     void FixedUpdate() {
