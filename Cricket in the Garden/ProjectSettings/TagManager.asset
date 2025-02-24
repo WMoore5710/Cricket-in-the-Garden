@@ -8,6 +8,7 @@ TagManager:
   - bush
   - bushOut
   - enemy
+  - player
   layers:
   - Default
   - TransparentFX
