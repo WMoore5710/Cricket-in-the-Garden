@@ -19,7 +19,6 @@ public class CrowController : MonoBehaviour
     // Fixed update is used here for controlling crow RNG
     void FixedUpdate() { 
         int crowrand = Random.Range(0, 15);
-        Debug.Log(crowrand);
         if (crowrand == 1 && !hasCrowSpawned) {
             Instantiate(crow, crowSpawn.position, Quaternion.identity);
             hasCrowSpawned = true;

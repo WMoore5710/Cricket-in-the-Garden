@@ -18,18 +18,24 @@ public class EnemyController : MonoBehaviour
         public LayerMask obstructLayer; // layer for objects that obstruct FOV of enemy
         public bool CanSeePlayer {get; private set;}
         public PlayerController playerRef;
+    [Header("RigidBody Vars")]
+        public float flySpeed;
+        private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {   
-        //playerRef = GameObject.FindGameObjectWithTag("Player");
+        rb = enemyInstance.GetComponent<Rigidbody2D>();
+        playerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         enemyInstance = this;
         StartCoroutine(FOVCheck());
+        transform.position += flySpeed * Time.deltaTime;
     }
 
     // Update is called once per frame
     void Update()
     {
         Debug.Log(CanSeePlayer);
+        
     }
     private IEnumerator FOVCheck() {
         WaitForSeconds wait = new WaitForSeconds(0.2f);
