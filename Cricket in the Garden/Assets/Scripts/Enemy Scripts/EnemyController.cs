@@ -17,11 +17,11 @@ public class EnemyController : MonoBehaviour
         public LayerMask targetLayer; // the layer for object that will be targeted by enemy in FOV check
         public LayerMask obstructLayer; // layer for objects that obstruct FOV of enemy
         public bool CanSeePlayer {get; private set;}
-        public GameObject playerRef;
+        public PlayerController playerRef;
     // Start is called before the first frame update
     void Start()
     {   
-        playerRef = GameObject.FindGameObjectWithTag("Player");
+        //playerRef = GameObject.FindGameObjectWithTag("Player");
         enemyInstance = this;
         StartCoroutine(FOVCheck());
     }
@@ -29,7 +29,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(CanSeePlayer);
     }
     private IEnumerator FOVCheck() {
         WaitForSeconds wait = new WaitForSeconds(0.2f);
@@ -48,7 +48,7 @@ public class EnemyController : MonoBehaviour
             if(Vector2.Angle(transform.up, directionToTarget)< angle/2) {
                 float distanceToTarget = Vector2.Distance(transform.position, target.position);
                 // check to see if player is not obstructed by walls (anything in the obstruct layer)
-                if (!Physics2D.Raycast(transform.position, directionToTarget,distanceToTarget, obstructLayer)) {
+                if (!Physics2D.Raycast(transform.position, directionToTarget,distanceToTarget, obstructLayer) && !playerRef.isSneaking) {
                     // if player is not behind walls
                     CanSeePlayer = true;
                 } else {
