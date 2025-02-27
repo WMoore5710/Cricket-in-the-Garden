@@ -28,7 +28,6 @@ public class EnemyController : MonoBehaviour
         playerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         enemyInstance = this;
         StartCoroutine(FOVCheck());
-        transform.position += flySpeed * Time.deltaTime;
     }
 
     // Update is called once per frame
@@ -70,5 +69,11 @@ public class EnemyController : MonoBehaviour
             // if player is not the circle overlap then set can see player to false
             CanSeePlayer = false;
         }
+    }
+        public void takeDamage(int amount){
+            health -= amount;
+            if(health <= 0){
+            Destroy(gameObject);
+            }
     }
 }

@@ -7,51 +7,47 @@ Bullet logic such as velocity and rotation is handled (going to be) Within the b
 */
 public class WeaponController : MonoBehaviour
 {   
-    [Header("Unity Objects")]
-        public Transform firePoint;
-        public GameObject bulletPreFab;
-    [Header("Timer Vars")]
-        public float FireDelay;
-        private bool canFire;
-        private bool timerOn;
-        public int timeBetweenFiring;
-    [Header("Misc Vars")]
-        private Vector3 mousePos;
-        private Camera mainCam;
-        public GameObject player;
+    // Start is called before the first frame update
+    public Transform Gun;
+    Vector2 direction;
 
+    public GameObject Bullet;
+
+    public float BulletSpeed;
+    public Transform ShootPoint;
+    public float fireRate;
+    float ReadyForNextShot;
     // Start is called before the first frame update
     void Start()
     {
-        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        
     }
 
     // Update is called once per frame
+    //Code taken and used by TheGameGuy for shooting. I did not use the recoil function later on in video. https://www.youtube.com/watch?v=NKF-FkDzE-s&t=532s
     void Update()
-    {   
-        // Logic taken from my semester project. The firing works mostly the same
-        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition); // find position of mouse
+    {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        direction = mousePos - (Vector2)Gun.position;
+        FaceMouse();
 
-        Vector3 rotation = mousePos - transform.position;
-
-        float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-
-        transform.rotation = Quaternion.Euler(0,0,rotZ);
-        
-        // if you can fire and click to fire
-        if (Input.GetMouseButton(0) && canFire && !player.GetComponent<PlayerController>().isSneaking) {
-            canFire = false;
-            Instantiate(bulletPreFab, firePoint.position, Quaternion.identity); // functions of the bullet created here are manged in BulletController on the prefabs
-        }
-        // if you cant fire then timer is started
-        if (!canFire && !timerOn) {
-            StartCoroutine(timer());
+        if(Input.GetMouseButtonDown(0)){
+            if(Time.time > ReadyForNextShot)
+            {   
+                ReadyForNextShot = Time.time + 1/fireRate;
+                shoot();
+            }
         }
     }
-    IEnumerator timer() {
-        timerOn = true;
-        yield return new WaitForSeconds(timeBetweenFiring);
-        canFire = true;
-        timerOn = false;
+
+    void FaceMouse(){
+        Gun.transform.right = direction;
+    }
+
+    void shoot(){
+        GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
+        BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.right * BulletSpeed);
+        Destroy(BulletIns, 5);
     }
 }
+

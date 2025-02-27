@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
-This script manages the velocity, rotation, and collisions of instatated bullet Prefab object from our WeaponController script.
-(its gonna its not done yet)
-*/
-public class BulletController : MonoBehaviour
+
+public class bulletDamage : MonoBehaviour
 {
+    public int bulletDMG;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +15,18 @@ public class BulletController : MonoBehaviour
     void Update()
     {
         
+    }
+    void OnTriggerEnter2D(Collider2D collision){
+        if(collision.gameObject.CompareTag("enemy")){
+            var healthComponent = collision.GetComponent<EnemyController>();
+            if (healthComponent != null)
+            {
+                healthComponent.takeDamage(bulletDMG);
+            }
+            Destroy(gameObject);
+        }
+        if(collision.gameObject.CompareTag("enemy")){
+            Destroy(gameObject);
+        }
     }
 }
