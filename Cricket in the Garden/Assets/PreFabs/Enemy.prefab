@@ -108,7 +108,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   playerRef: {fileID: 0}
-  flySpeed: 0
+  flySpeed: 50
+  crowMaxSpeed: 2
 --- !u!50 &3870336777860513445
 Rigidbody2D:
   serializedVersion: 4
