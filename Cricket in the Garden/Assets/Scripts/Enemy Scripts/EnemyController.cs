@@ -26,6 +26,7 @@ public class EnemyController : MonoBehaviour
     [Header("Attack Vars")]
         public float attRandDelay;
         public GameObject lazer;
+        bool lazerActive = false;
     // Start is called before the first frame update
     void Start()
     {   
@@ -39,9 +40,10 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(CanSeePlayer);
-        
-        
+        Debug.Log(CanSeePlayer);  
+        while (CanSeePlayer && !lazerActive) {
+            StartCoroutine(AttackPlayer());
+        }  
     }
     public void lazerAtt() {
         Instantiate(lazer, firePoint.transform.position, firePoint.transform.rotation);
@@ -66,10 +68,15 @@ public class EnemyController : MonoBehaviour
     }
     // Attack player runs while the player is in the crows sight. It creates a random chance for the crow to attack while the player is in that range.
     private IEnumerator AttackPlayer() {
-        int AttackRand = Random.Range(0,20);
-        yield return new WaitForSeconds(attRandDelay);
-        if (AttackRand == 1) {
-            
+        Debug.Log("lazer");
+        lazerActive = true;
+        while (CanSeePlayer && !lazerActive) {
+            int AttackRand = Random.Range(0,20);
+            yield return new WaitForSeconds(attRandDelay);
+            if (AttackRand == 1) {
+                Debug.Log("lazerFire");
+                lazerAtt();
+            }  
         }
     }
     // FOV method creates a circle overlap and then uses a layermask to see if the anything in target layer (the player) is inside of that circle overlap

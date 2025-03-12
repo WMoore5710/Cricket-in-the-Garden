@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c160d201fee62b449ac93651bf7751f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 6477446847165678864}
   health: 5
   radius: 5
   angle: 360
@@ -112,8 +112,8 @@ MonoBehaviour:
   playerRef: {fileID: 0}
   flySpeed: 50
   crowMaxSpeed: 2
-  attRandDelay: 0
-  lazer: {fileID: 0}
+  attRandDelay: 0.25
+  lazer: {fileID: 1907592476884327109, guid: a9c51d938bce7434aaae6f9fdc95b733, type: 3}
 --- !u!50 &1861862481268910400
 Rigidbody2D:
   serializedVersion: 4
