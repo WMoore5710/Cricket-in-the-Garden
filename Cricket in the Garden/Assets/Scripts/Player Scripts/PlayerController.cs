@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [Header("Player stuff")]
         public Rigidbody2D rb;
         public int health;
+        public Vector2 RespawnPoint;
+        int maxHealth;
 
     [Header("Movement Variables")]
         private bool facingRight;
@@ -30,14 +32,17 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         isSneaking = false;
+        maxHealth = health;
     }
 
     // Update is called once per frame
-    void Update()
-    {   
+    void Update() {   
         xMovement = Input.GetAxis("Horizontal")*speed;
         if (isOnSurface() && Input.GetButtonDown("Jump")) {
             callJump = true; 
+        }
+        if (health < 1) {
+            Respawn();
         }
     }
     void FixedUpdate() {
@@ -81,5 +86,16 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("bushOut") && isSneaking) {
             sneakToggle(false);
         }
+        if (collision.CompareTag("lazer")) {
+            takeDamage(collision.GetComponent<LazerDmg>().damage);
+        }
+    }
+    public void takeDamage(int damage) {
+        health -= damage;
+    }
+    public void Respawn() {
+        transform.position = RespawnPoint;
+        health = maxHealth;
+        if (isSneaking) {isSneaking = false;}
     }
 }

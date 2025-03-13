@@ -39,14 +39,12 @@ public class EnemyController : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        Debug.Log(CanSeePlayer);  
         if (CanSeePlayer && !lazerActive) {
             StartCoroutine(AttackPlayer());
-        }  
+        }
     }
     public void lazerAtt() {
         Instantiate(lazer, firePoint.transform.position, firePoint.transform.rotation);
-        lazerActive = false;
     }
     private IEnumerator FOVCheck() {
         WaitForSeconds wait = new WaitForSeconds(0.2f);
@@ -62,7 +60,6 @@ public class EnemyController : MonoBehaviour
                 rb.AddRelativeForce (Vector3.left * flySpeed);
                 WaitForSeconds wait = new WaitForSeconds(0.1f);
                 yield return wait;
-                Debug.Log("velo++");
             }
         }
     }
@@ -72,9 +69,10 @@ public class EnemyController : MonoBehaviour
             int AttackRand = Random.Range(0,100);
             yield return new WaitForSeconds(attRandDelay);
             if (AttackRand == 1) {
-                Debug.Log("lazerFire");
                 lazerActive = true;
                 lazerAtt();
+                yield return new WaitForSeconds(2);
+                lazerActive = false;
             }
         }
     }
