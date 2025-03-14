@@ -7,14 +7,10 @@ public class bulletDamage : MonoBehaviour
     public int bulletDMG;
     void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.CompareTag("enemy")){
-            var healthComponent = collision.GetComponent<EnemyController>();
-            if (healthComponent != null)
-            {
-                healthComponent.takeDamage(bulletDMG);
+            EnemyController enemyInstance = collision.GetComponent<EnemyController>();
+            if (enemyInstance != null) {
+                enemyInstance.takeDamage(bulletDMG);
             }
-            Destroy(gameObject);
-        }
-        if(collision.gameObject.CompareTag("enemy")){
             Destroy(gameObject);
         }
     }

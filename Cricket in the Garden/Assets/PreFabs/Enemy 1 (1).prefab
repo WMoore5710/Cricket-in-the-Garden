@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 595843502147753595}
   - component: {fileID: 1523495443518509242}
   - component: {fileID: 1861862481268910400}
+  - component: {fileID: -4887535221145505796}
   m_Layer: 0
   m_Name: Enemy 1 (1)
   m_TagString: enemy
@@ -110,10 +111,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   playerRef: {fileID: 0}
-  flySpeed: 50
+  flySpeed: 20
   crowMaxSpeed: 2
   attRandDelay: 0.25
-  lazer: {fileID: 5727420867384783167, guid: 314889e28701a3f4b98feeb66ccb9cac, type: 3}
+  lazer: {fileID: 5727420867384783167, guid: 204ec796213c9774493c4fbce6b25974, type: 3}
 --- !u!50 &1861862481268910400
 Rigidbody2D:
   serializedVersion: 4
@@ -141,6 +142,51 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!61 &-4887535221145505796
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2672725208607413508}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.85, y: 1.76}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.85, y: 1.76}
+  m_EdgeRadius: 0
 --- !u!1 &6477446847165678864
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /*
-This script manages (going to manage) Basic functions of the player enemys. 
-Including FOV/Player Detection, Movement (not yet), etc...
+This script manages the basic functions of the Crow enemys. 
+Including FOV/Player Detection, Movement, attacks etc...
 */
 public class EnemyController : MonoBehaviour
 {
@@ -40,6 +40,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update() {
         if (CanSeePlayer && !lazerActive) {
+            Debug.Log("lazer coroutine");
             StartCoroutine(AttackPlayer());
         }
     }
@@ -53,6 +54,9 @@ public class EnemyController : MonoBehaviour
             FOV();
         }
     }
+    void OnTriggerEnter2D(Collider2D collision) {
+        Destroy(gameObject);
+    }
     // crow velocity adder.
     private IEnumerator fly() {
         while (true) {
@@ -65,15 +69,13 @@ public class EnemyController : MonoBehaviour
     }
     // Attack player runs while the player is in the crows sight. It creates a random chance for the crow to attack while the player is in that range.
     private IEnumerator AttackPlayer() {
-        while (CanSeePlayer && !lazerActive) {
-            int AttackRand = Random.Range(0,100);
-            yield return new WaitForSeconds(attRandDelay);
-            if (AttackRand == 1) {
-                lazerActive = true;
-                lazerAtt();
-                yield return new WaitForSeconds(2);
-                lazerActive = false;
-            }
+        lazerActive = true;
+        int AttackRand = Random.Range(1,2);
+        yield return new WaitForSeconds(attRandDelay);
+        if (AttackRand == 1) {
+            lazerAtt();
+            yield return new WaitForSeconds(2);
+            lazerActive = false;
         }
     }
     // FOV method creates a circle overlap and then uses a layermask to see if the anything in target layer (the player) is inside of that circle overlap

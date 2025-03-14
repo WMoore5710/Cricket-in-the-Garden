@@ -6,7 +6,7 @@ public class LazerDmg : MonoBehaviour
 {      
     public PlayerController playerRef;
     public int damage;
-    public int Lazertime;
+    public float Lazertime;
     public GameObject parentRef;
     // Start is called before the first frame update
     void Start() {

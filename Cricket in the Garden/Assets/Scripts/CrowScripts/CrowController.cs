@@ -8,20 +8,25 @@ public class CrowController : MonoBehaviour
         public GameObject crow;
         public Transform crowSpawn;
     [Header("rand")]
-        bool hasCrowSpawned;
+        bool onCrowCooldown;
+        public int crowSpawnDelay;
     // Start is called before the first frame update
     void Start()
     {
-        hasCrowSpawned = false;
+        onCrowCooldown = false;
+        StartCoroutine(CreateCrows());
     }
-
-    // Update is called once per frame
-    // Fixed update is used here for controlling crow RNG
-    void FixedUpdate() { 
-        int crowrand = Random.Range(0, 15);
-        if (crowrand == 1 && !hasCrowSpawned) {
-            Instantiate(crow, crowSpawn.position, Quaternion.identity);
-            hasCrowSpawned = true;
-        }
+    private IEnumerator CreateCrows() {
+        while (true) {
+            int crowrand = Random.Range(0, 5);
+            if (crowrand == 1 && !onCrowCooldown) {
+                Instantiate(crow, crowSpawn.position, Quaternion.identity);
+                onCrowCooldown = true;
+            }
+            if (onCrowCooldown) {
+                yield return new WaitForSeconds(crowSpawnDelay);
+                onCrowCooldown = false;
+            }
+        }    
     }
 }

@@ -9,6 +9,8 @@ TagManager:
   - bushOut
   - enemy
   - player
+  - lazer
+  - bullet
   layers:
   - Default
   - TransparentFX
