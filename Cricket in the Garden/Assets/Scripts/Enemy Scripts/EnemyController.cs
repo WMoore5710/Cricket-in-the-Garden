@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
         public GameObject firePoint;
     [Header("GamePlay vars")]
         public int health;
+        public int enemyDeathTimer;
     [Header("Player detection vars")]
         public float radius = 10.0f;
         [Range(1,360)] public float angle = 45f;
@@ -35,6 +36,7 @@ public class EnemyController : MonoBehaviour
         playerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         StartCoroutine(FOVCheck());
         StartCoroutine(fly());
+        Destroy(gameObject, enemyDeathTimer);
     }
 
     // Update is called once per frame

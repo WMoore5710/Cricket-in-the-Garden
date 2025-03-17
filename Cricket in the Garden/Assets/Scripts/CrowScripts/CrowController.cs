@@ -10,6 +10,7 @@ public class CrowController : MonoBehaviour
     [Header("rand")]
         bool onCrowCooldown;
         public int crowSpawnDelay;
+
     // Start is called before the first frame update
     void Start()
     {
