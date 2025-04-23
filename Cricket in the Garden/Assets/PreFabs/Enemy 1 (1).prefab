@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 7660501785599113587}
   health: 5
-  enemyDeathTimer: 10
+  enemyDeathTimer: 8
   radius: 5
   angle: 360
   targetLayer:
