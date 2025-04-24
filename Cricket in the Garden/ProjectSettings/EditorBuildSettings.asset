@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Title Screen.unity
     guid: 0029f570b426182439af26aa63ddab25
   - enabled: 1
-    path: Assets/Scenes/Prototype-- Cricket.unity
+    path: Assets/Scenes/Level 1.unity
     guid: 08eeaffdf17af0342882b51e740828ac
   - enabled: 1
     path: Assets/Scenes/Cave Level 2.unity
