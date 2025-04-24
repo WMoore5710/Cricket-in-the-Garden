@@ -1489,7 +1489,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 320776041}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 222e1ac2f620a4f48b9015796926688f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -38405,7 +38405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58eb2d8c6e5ea4c4d935907fb4e37419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneBuildIndex: 1
+  sceneBuildIndex: 2
 --- !u!1001 &751659293
 PrefabInstance:
   m_ObjectHideFlags: 0

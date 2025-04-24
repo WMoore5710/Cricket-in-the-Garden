@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
+    path: Assets/Scenes/Title Screen.unity
+    guid: 0029f570b426182439af26aa63ddab25
+  - enabled: 1
     path: Assets/Scenes/Prototype-- Cricket.unity
     guid: 08eeaffdf17af0342882b51e740828ac
   - enabled: 1
@@ -17,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 3.unity
     guid: 6db92494a9c81cc42b6e0027fd02856b
+  - enabled: 1
+    path: Assets/Scenes/End Screen.unity
+    guid: b61310a3aed278342950dca9aaf669c1
   m_configObjects: {}
