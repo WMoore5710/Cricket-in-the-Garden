@@ -170,8 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95b1e3165ca57d49a62dfd65e3ab71f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeight: 8
-  minHeight: -7
+  maxHeight: -2
+  minHeight: -13
   LowRad: {fileID: 0}
   MidRad: {fileID: 0}
   HighRad: {fileID: 0}
@@ -182,7 +182,7 @@ MonoBehaviour:
   medRadDist: 0
   lowRadDist: 0
   MaxSpeed: 16
-  waitTime: 1
+  waitTime: 0.5
   MoveSpeed: 8
   rb: {fileID: 59330338}
 --- !u!50 &59330338
@@ -372,7 +372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &318430846
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1147,7 +1147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58eb2d8c6e5ea4c4d935907fb4e37419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneBuildIndex: 0
+  sceneBuildIndex: 2
 --- !u!1 &847223730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,7 +1165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &847223731
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1267,7 +1267,7 @@ MonoBehaviour:
   medRadDist: 0
   lowRadDist: 0
   MaxSpeed: 16
-  waitTime: 1
+  waitTime: 0.5
   MoveSpeed: 8
   rb: {fileID: 884060116}
 --- !u!50 &884060116
@@ -41534,8 +41534,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95b1e3165ca57d49a62dfd65e3ab71f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeight: 8
-  minHeight: -7
+  maxHeight: -1
+  minHeight: -13
   LowRad: {fileID: 0}
   MidRad: {fileID: 0}
   HighRad: {fileID: 0}
@@ -41546,7 +41546,7 @@ MonoBehaviour:
   medRadDist: 0
   lowRadDist: 0
   MaxSpeed: 16
-  waitTime: 1
+  waitTime: 3
   MoveSpeed: 8
   rb: {fileID: 891292238}
 --- !u!50 &891292238
@@ -41795,7 +41795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &981636882
 RectTransform:
   m_ObjectHideFlags: 0
@@ -67018,7 +67018,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 1087505704}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 222e1ac2f620a4f48b9015796926688f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -67092,8 +67092,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95b1e3165ca57d49a62dfd65e3ab71f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeight: 8
-  minHeight: -7
+  maxHeight: -2
+  minHeight: -13
   LowRad: {fileID: 0}
   MidRad: {fileID: 0}
   HighRad: {fileID: 0}
@@ -67104,7 +67104,7 @@ MonoBehaviour:
   medRadDist: 0
   lowRadDist: 0
   MaxSpeed: 16
-  waitTime: 1
+  waitTime: 1.25
   MoveSpeed: 8
   rb: {fileID: 1462865452}
 --- !u!50 &1462865452
@@ -67454,8 +67454,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95b1e3165ca57d49a62dfd65e3ab71f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeight: 8
-  minHeight: -7
+  maxHeight: -2
+  minHeight: -13
   LowRad: {fileID: 0}
   MidRad: {fileID: 0}
   HighRad: {fileID: 0}
@@ -67836,7 +67836,7 @@ MonoBehaviour:
   medRadDist: 0
   lowRadDist: 0
   MaxSpeed: 16
-  waitTime: 1
+  waitTime: 2
   MoveSpeed: 8
   rb: {fileID: 1893311611}
 --- !u!50 &1893311611
@@ -68177,8 +68177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95b1e3165ca57d49a62dfd65e3ab71f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeight: 8
-  minHeight: -7
+  maxHeight: -1
+  minHeight: -11
   LowRad: {fileID: 0}
   MidRad: {fileID: 0}
   HighRad: {fileID: 0}
@@ -68189,7 +68189,7 @@ MonoBehaviour:
   medRadDist: 0
   lowRadDist: 0
   MaxSpeed: 16
-  waitTime: 1
+  waitTime: 0.25
   MoveSpeed: 8
   rb: {fileID: 2081966666}
 --- !u!50 &2081966666
