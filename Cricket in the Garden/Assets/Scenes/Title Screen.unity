@@ -157,11 +157,11 @@ RectTransform:
   - {fileID: 49489871}
   m_Father: {fileID: 2040152842}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -304.5, y: -165.06}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -64.493164, y: -122.27554}
   m_SizeDelta: {x: 533.9863, y: 310.4311}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &9744287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,11 +459,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2040152842}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 327, y: 102.56}
-  m_SizeDelta: {x: 277.9327, y: 224.8}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 277.93274, y: 224.79999}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &334165793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,10 +534,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2040152842}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000033379, y: -0.0000038146}
-  m_SizeDelta: {x: 1014, y: 397}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &473997156
 MonoBehaviour:
@@ -721,11 +721,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2040152842}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 349, y: -108}
-  m_SizeDelta: {x: 390.3763, y: 150.6614}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 37.188232, y: 14.669312}
+  m_SizeDelta: {x: 390.37634, y: 150.6614}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &1603871263
 MonoBehaviour:
   m_ObjectHideFlags: 0
